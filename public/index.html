@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Ping Pong</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <body>
+      <h1>Ping Pong</h1>
+      <div ng-app="pongApp">
+         <div ng-controller="mainCtrl">
+            <form ng-submit="submitPlayer(player)">
+               <input type="text" ng-model="player.name" placeholder="name">
+               <input type="text" ng-model="player.nickname">
+               <input type="number" ng-model="player.rank">  
+               <input type="submit">          
+            </form>
+            <form ng-submit="submitTeam(team)">
+               <input type="text" ng-model="team.team_name" placeholder="team"> 
+               <input type="submit">          
+            </form>
+
+            <div> 
+               <h1>Players</h1>
+               <ul>
+                  <li ng-repeat="player in players">{{player.nickname}}</li>
+               </ul>
+            </div>
+            <div> 
+               <h1>Teams</h1>
+               <ul>
+                  <li ng-repeat="team in teams">{{team.team_name}}</li>
+               </ul>
+            </div>
+         </div>
+      </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script src="app.js"></script>
+   </body>
+</html>
